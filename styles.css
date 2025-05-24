@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+    }
+body{
+    font-family: Arial, sans-serif;
+}
+
+.home{
+    background-color: #9D6C4F;
+    display: flex;
+}
+
+.texto-home{
+    width: 50%;
+    padding: 3rem;
+    padding-top: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.texto-home h3{
+    background-color: #64422E;
+    width: 290px;
+    color: white;
+    font-weight: 300;
+}
+
+.img-home{
+    width: 50%;
+    background-image: url('carpintero.jpg'); /* Cambia esto por la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+
+}
+
+.about{
+    background-color:  #64422E;
+    display: flex;
+}
+
+.texto-about{
+    width: 50%;
+    margin: 2rem;
+}
+
+.texto-about h1{
+    color: #9D6C4F;
+}
+
+.texto-about p{
+    padding:1rem;
+    color: white;
+}
+
+.img-about{
+    width: 50%;
+}
+
+.works{
+    background-color: #9D6C4F;
+}
+
+.works-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+.contacto{
+    background-color: #64422E;
+}
