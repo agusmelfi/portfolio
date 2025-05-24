@@ -7,6 +7,36 @@ body{
     font-family: Arial, sans-serif;
 }
 
+.navbar {
+      background-color: #9D6C4F;
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px 40px;
+    }
+
+.navbar a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #64422E;
+      font-weight: bold;
+      border-bottom: 2px solid transparent;
+    }
+
+.navbar a:hover {
+      border-bottom: 2px solid #64422E;
+    }
+
+.puntos-matriz {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: 100px;
+  height: 100px;
+  background-image: radial-gradient(#000000 1.5px, transparent 1.5px);
+  background-size: 16px 20px;
+}
+
+
 .home{
     background-color: #9D6C4F;
     display: flex;
