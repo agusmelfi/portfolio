@@ -108,7 +108,7 @@
     gap: 40px;
     background-color: white;
     padding: 20px 40px;
-    border-radius: 12px;
+    border-radius: 6px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     width: fit-content;
     position: absolute;
@@ -130,6 +130,7 @@
     width: 28px;
     height: 28px;
     margin-bottom: 8px;
+    color: var(--marron-claro);
   }
 
   .stat-num {
@@ -359,3 +360,119 @@ footer {
   font-size: 1.5rem;
   text-align: center;
 }
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction:column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .navbar ul {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .puntos-matriz{
+    display: none;
+  }
+
+  .home {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .texto-home {
+    width: 100%;
+    padding: 2rem;
+    padding-top: 3rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .img-home {
+    width: 100%;
+    height: 250px;
+  }
+
+
+  .stats-bar {
+    display: none;
+  }
+
+  .about {
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 2rem;
+  }
+
+  .img-about, .texto-about {
+    width: 100%;
+    text-align: center;
+  }
+
+  .img-about img {
+    width: 100%;
+    height: auto;
+  }
+
+  .texto-about {
+    margin: 1rem 0;
+  }
+
+  .works-grid {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 1rem;
+  }
+
+  .item {
+    aspect-ratio: unset;
+    height: auto;
+  }
+
+  .item img {
+    aspect-ratio: 1 / 1;
+  }
+
+  .contacto-primera-linea {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contacto-txt, .img-contacto {
+    width: 100%;
+    text-align: center;
+  }
+
+  .img-contacto img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+  }
+
+  .icon-circle {
+    margin: 10px;
+  }
+
+  .titulo {
+    font-size: 36px;
+  }
+
+  .parrafo {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width:391px){
+  .navbar a{
+    font-size:medium;
+  }
+}
+
+@media screen and (min-width:392px) and (max-width:450px){
+  .navbar a{
+    font-size:large;
+  }
+}
+
