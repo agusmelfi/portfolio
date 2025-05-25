@@ -15,6 +15,10 @@
     font-size: 60px;
 }
 
+.parrafo{
+  font-weight: 20px;
+}
+
 .navbar {
       background-color: var(--marron-oscuro);
       display: flex;
@@ -283,6 +287,11 @@
 
 }
 
+.contacto p{
+  color: white;
+  font-size: large;
+}
+
 .contacto a{
     color: var(--marron-claro);
 
@@ -345,3 +354,13 @@ footer {
     flex-direction: row;
     gap:2rem
 }
+
+  .icon-circle {
+    background-color: white;
+    color: var(--marron-oscuro);
+    border-radius: 50%;
+    padding: 10px;
+    margin: 5px;
+    font-size: 1.5rem;
+    text-align: center;
+  }
