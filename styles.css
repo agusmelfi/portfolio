@@ -272,3 +272,76 @@
 .contacto h2{
     color: var(--marron-claro);
 }
+
+.contacto {
+    color: var(--marron-claro);
+    background-color: var(--marron-oscuro);
+    margin: auto;
+    padding: 40px 30px;
+    text-align: left;
+    border-radius: 8px;
+
+}
+
+.contacto a{
+    color: var(--marron-claro);
+
+}
+
+hr {
+    height: 4px;
+    color: var(--marron-claro);
+    border-color: var(--marron-claro);
+    background-color: var(--marron-claro);
+    margin: 30px auto;
+  }
+
+
+footer {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+/*.contacto-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.contacto-txt{
+  
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.img-contacto{
+    width: 50%;
+}
+
+.img-contacto img{
+    width: 470px;
+    height: 300px;
+}*/
+
+.contacto-primera-linea{
+  display: flex;
+  justify-content: space-around;
+}
+.img-contacto img{
+    width: 550px;
+    height: 350px;
+}
+.contacto-txt{
+  
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.icons{
+  display: flex;
+    flex-direction: row;
+    gap:2rem
+}
