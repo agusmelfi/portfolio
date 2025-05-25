@@ -283,8 +283,6 @@
     margin: auto;
     padding: 40px 30px;
     text-align: left;
-    border-radius: 8px;
-
 }
 
 .contacto p{
@@ -349,18 +347,14 @@ footer {
     flex-direction: column;
     justify-content: space-around;
 }
-.icons{
-  display: flex;
-    flex-direction: row;
-    gap:2rem
-}
 
-  .icon-circle {
-    background-color: white;
-    color: var(--marron-oscuro);
-    border-radius: 50%;
-    padding: 10px;
-    margin: 5px;
-    font-size: 1.5rem;
-    text-align: center;
-  }
+
+.icon-circle {
+  background-color: white;
+  color: var(--marron-oscuro);
+  border-radius: 50%;
+  padding: 10px;
+  margin: 5px;
+  font-size: 1.5rem;
+  text-align: center;
+}
