@@ -19,6 +19,16 @@
   font-weight: 20px;
 }
 
+/*.offcanvas {
+  background-color: var(--marron-oscuro);
+  color: white;
+}
+.offcanvas .nav-link {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+*/
 .navbar {
       background-color: var(--marron-oscuro);
       display: flex;
@@ -391,8 +401,8 @@ footer {
     width: 100%;
     padding: 2rem;
     padding-top: 3rem;
-    text-align: center;
-    align-items: center;
+    text-align: start;
+    align-items: start;
   }
 
   .img-home {
@@ -406,14 +416,23 @@ footer {
   }
 
   .about {
-    flex-direction: column;
+    flex-direction: column-reverse;
     height: auto;
     padding-bottom: 2rem;
   }
 
-  .img-about, .texto-about {
+   .about h1{
+    padding-left: 1rem;
+   }
+
+  .img-about{
+    width: 70%;
+    text-align: left;
+  }
+
+  .texto-about{
     width: 100%;
-    text-align: center;
+    text-align: left;
   }
 
   .img-about img {
@@ -440,23 +459,25 @@ footer {
   }
 
   .contacto-primera-linea {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
 
-  .contacto-txt, .img-contacto {
+  .contacto-txt{
     width: 100%;
-    text-align: center;
+    text-align: start;
   }
 
   .img-contacto img {
     width: 100%;
     height: auto;
     max-width: 400px;
+    text-align: end;
   }
 
   .icon-circle {
-    margin: 10px;
+    width: 40px;
+    height: 40px;
   }
 
   .titulo {
