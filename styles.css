@@ -10,6 +10,14 @@
   font-family: "Heebo";
 }
 
+  .offcanvas.custom-width {
+    width: 70% !important;
+    max-width: 300px;
+  }
+
+  .container-logo span{
+    color: #C79976;
+  }
 
 .titulo{
     font-size: 60px;
@@ -33,7 +41,13 @@
       background-color: var(--marron-oscuro);
       display: flex;
       justify-content: flex-end;
+      align-items: center;
       padding: 20px 40px;
+    }
+
+    .navbar ul{
+      margin-top: 10px;
+      margin-right: 30px;
     }
 
 .navbar a {
@@ -48,6 +62,11 @@
 .navbar a:hover {
       border-bottom: 2px solid var(--marron-claro);
     }
+
+
+#nav-mobile{
+  display: none;
+}
 
 .puntos-matriz {
   position: absolute;
@@ -503,5 +522,11 @@ footer {
   .navbar a{
     font-size:large;
   }
+  #nav-mobile{
+  display: block;
+}
+  #nav-web{
+  display: none;
+}
 }
 
