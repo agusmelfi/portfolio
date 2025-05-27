@@ -129,10 +129,10 @@
             <button class="filter-btn" data-category="oficina">Oficina</button>
         </div>
         <div class="works-wrapper">
-          <div class="" id="prevBtn">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
-              <path d="M16 4l-8 8 8 8" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+          <div class="d-md-none" id="prevBtn">
+              <svg width="42" height="42" viewBox="0 0 24 24" fill="none">
+                <path d="M16 4l-8 8 8 8" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
           </div>
          <div class="works-grid">
             <div class="item" data-category="bar"><img src="assets/trabajo_bar.jpg" alt="Trabajo 1"></div>
@@ -145,10 +145,10 @@
             <div class="item" data-category="oficina"><img src="assets/trabajo_muebletv.jpg" alt="Trabajo 8"></div>
             <div class="item" data-category="oficina"><img src="assets/trabajo_placard.jpg" alt="Trabajo 9"></div>
         </div>
-        <div class="" id="nextBtn">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
-            <path d="M8 4l8 8-8 8" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+        <div class="d-md-none" id="nextBtn">
+            <svg width="42" height="42" viewBox="0 0 24 24" fill="none">
+              <path d="M8 4l8 8-8 8" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
         </div>
     </section>
 
@@ -211,27 +211,32 @@
 
 
     <script>
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const items = document.querySelectorAll('.works-grid .item');
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.works-grid .item');
+  const worksGrid = document.querySelector('.works-grid'); // ← Agregado
 
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-            // Activar solo el botón actual
-            filterButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Activar solo el botón actual
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
 
-            const category = btn.getAttribute('data-category');
+      const category = btn.getAttribute('data-category');
 
-            items.forEach(item => {
-                if (category === 'all' || item.getAttribute('data-category') === category) {
-                item.style.display = 'block';
-                } else {
-                item.style.display = 'none';
-                }
-            });
-            });
-        });
-    </script>
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      // ✅ Reiniciar scroll horizontal al cambiar filtro
+      worksGrid.scrollTo({ left: 0, behavior: 'auto' });
+    });
+  });
+</script>
+
 
     <script>
   const grid = document.querySelector('.works-grid');

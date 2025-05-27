@@ -283,6 +283,10 @@
   padding: 0;         /* Quitamos padding lateral */
 }
 
+.works-grid {
+  overflow-x: hidden;
+}
+
 
 
 .item {
@@ -400,7 +404,9 @@ footer {
   display: none;
 }
 
+
 @media screen and (max-width: 768px) {
+
   .navbar {
     flex-direction:column;
     align-items: center;
@@ -490,6 +496,16 @@ footer {
     min-width: 100%;
     scroll-snap-align: center;
     flex-shrink: 0;
+  }
+
+  .works-grid {
+    overflow-x: auto;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+  }
+
+  .works-grid::-webkit-scrollbar {
+    display: none; 
   }
 
   .contacto-primera-linea {
