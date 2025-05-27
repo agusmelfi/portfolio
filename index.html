@@ -177,13 +177,11 @@
 
     </section>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const offcanvasElement = document.getElementById('menuLateral');
-    const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
+  document.addEventListener("DOMContentLoaded", () => {
+    const offcanvasEl = document.getElementById("menuLateral");
+    const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
 
-    const links = document.querySelectorAll('#menuLateral .nav-link');
-
-    links.forEach(link => {
+    document.querySelectorAll('#menuLateral .nav-link').forEach(link => {
       link.addEventListener('click', function (e) {
         e.preventDefault();
 
@@ -191,24 +189,26 @@
         const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
-          // Scroll suave manual
-          targetElement.scrollIntoView({ behavior: 'smooth' });
+          // Cerrar el menú primero
+          offcanvas.hide();
 
-          // Cambiar URL sin provocar otro scroll
-          history.pushState(null, '', targetId);
+          // Esperar a que se cierre completamente
+          offcanvasEl.addEventListener('hidden.bs.offcanvas', () => {
+            // Luego scrollear y actualizar hash
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.replaceState(null, '', targetId);
+            // Eliminar manualmente el backdrop si queda pegado
+            const backdrop = document.querySelector('.offcanvas-backdrop');
+            if (backdrop) backdrop.remove();
+            document.body.classList.remove('offcanvas-backdrop');
 
-          // Esperar un poco antes de cerrar el menú
-          setTimeout(() => {
-            offcanvas.hide();
-
-            // Quitar foco del botón hamburguesa
-            document.activeElement?.blur();
-          }, 300);
+          }, { once: true }); // Solo ejecutar una vez
         }
       });
     });
   });
 </script>
+
 
     <script>
         const filterButtons = document.querySelectorAll('.filter-btn');
