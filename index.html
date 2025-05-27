@@ -31,12 +31,11 @@
 
     <!-- Logo y nombre -->
     <div class="container-logo d-flex align-items-center">
-      <img src="logo.png" alt="Logo" width="30" height="30" class="me-2">
-      <span class="text-white fw-bold">INTERHAUS DESIGN</span>
+      <img src="./assets/Logo InterhausDesign-12.png" alt="Logo" width="30" height="30" class="logo">
     </div>
 
     <!-- Botón hamburguesa -->
-    <button class="btn text-white fs-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" style="background: none; border: none;">
+    <button class="btn fs-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" style="color:#C79976; background: none; border: none;">
       ☰
     </button>
   </div>
@@ -45,14 +44,14 @@
 <!-- MENU OFFCANVAS DESDE LA DERECHA -->
 <div class="offcanvas offcanvas-end custom-width" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel" style="background-color: #8C4C21; color: white;">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="menuLateralLabel">INTERHAUS DESIGN</h5>
+    <img src="./assets/Logo InterhausDesign-12.png" alt="">
     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
   </div>
   <div class="offcanvas-body">
     <ul class="nav flex-column">
-      <li class="nav-item"><a class="nav-link text-white fs-5" href="#about">Quién soy</a></li>
-      <li class="nav-item"><a class="nav-link text-white fs-5" href="#works">Trabajos</a></li>
-      <li class="nav-item"><a class="nav-link text-white fs-5" href="#contacto">Contacto</a></li>
+      <li class="nav-item"><a style="color: #C79976;" class="nav-link fs-5" href="#about">Quién soy</a>
+      <li class="nav-item"><a style="color: #C79976;" class="nav-link fs-5" href="#works">Trabajos</a></li>
+      <li class="nav-item"><a style="color: #C79976;" class="nav-link fs-5" href="#contacto">Contacto</a></li>
     </ul>
   </div>
 </div>
@@ -61,10 +60,12 @@
 </header >
 
     <header id="nav-web" class="navbar">
-        <div></div>
+      <div class="container-logo d-flex align-items-center">
+        <img src="./assets/Logo InterhausDesign-12.png" alt="Logo" width="30" height="30" class="logo">
+      </div>
         <nav>
             <ul>
-                <a href="#about">SOBRE MI</a>
+                <a href="#about">QUIEN SOY</a>
                 <a href="#works">TRABAJOS</a>
                 <a href="#contacto">CONTACTO</a>
             </ul>
@@ -127,7 +128,13 @@
             <button class="filter-btn" data-category="cama">Cama</button>
             <button class="filter-btn" data-category="oficina">Oficina</button>
         </div>
-        <div class="works-grid">
+        <div class="works-wrapper">
+          <div class="" id="prevBtn">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+              <path d="M16 4l-8 8 8 8" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+         <div class="works-grid">
             <div class="item" data-category="bar"><img src="assets/trabajo_bar.jpg" alt="Trabajo 1"></div>
             <div class="item" data-category="bar"><img src="assets/trabajo_baño.jpg" alt="Trabajo 2"></div>
             <div class="item" data-category="bar"><img src="assets/trabajo_cama.jpg" alt="Trabajo 3"></div>
@@ -137,6 +144,11 @@
             <div class="item" data-category="oficina"><img src="assets/trabajo_muebledivisor.jpg" alt="Trabajo 7"></div>
             <div class="item" data-category="oficina"><img src="assets/trabajo_muebletv.jpg" alt="Trabajo 8"></div>
             <div class="item" data-category="oficina"><img src="assets/trabajo_placard.jpg" alt="Trabajo 9"></div>
+        </div>
+        <div class="" id="nextBtn">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+            <path d="M8 4l8 8-8 8" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
     </section>
 
@@ -220,6 +232,26 @@
             });
         });
     </script>
+
+    <script>
+  const grid = document.querySelector('.works-grid');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  prevBtn.addEventListener('click', () => {
+    grid.scrollBy({
+      left: -grid.offsetWidth,
+      behavior: 'smooth'
+    });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    grid.scrollBy({
+      left: grid.offsetWidth,
+      behavior: 'smooth'
+    });
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
