@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css?v=1.4">
+    <link rel="stylesheet" href="styles.css?v=1.5">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
@@ -35,7 +35,7 @@
     </div>
 
     <!-- Botón hamburguesa -->
-    <button class="btn fs-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" style="color:#C79976; background: none; border: none;">
+    <button class="btn fs-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" style="color:#C79976; background: none; border: none;">
       ☰
     </button>
   </div>
@@ -189,29 +189,35 @@
         const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
-          // Cierra el menú primero
+          // Cierra el menú
           offcanvas.hide();
 
-          // Espera a que se cierre completamente
-          offcanvasEl.addEventListener('hidden.bs.offcanvas', () => {
-            // Scroll suave
-            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Esperar que aparezca el backdrop y permitir cierre al tocarlo
+          setTimeout(() => {
+            const backdrop = document.querySelector('.offcanvas-backdrop');
+            if (backdrop) {
+              backdrop.addEventListener('click', () => {
+                offcanvas.hide();
+              }, { once: true });
+            }
+          }, 50);
 
-            // Actualiza URL sin forzar otro scroll
+          // Después del cierre, scroll y limpieza
+          offcanvasEl.addEventListener('hidden.bs.offcanvas', () => {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
             history.replaceState(null, '', targetId);
 
-            // 🔧 LIMPIEZA COMPLETA para evitar bloqueo táctil
             document.body.classList.remove('offcanvas-backdrop', 'modal-open');
-            document.body.style.overflow = ''; // reactiva scroll/touch
-
+            document.body.style.overflow = '';
             const backdrop = document.querySelector('.offcanvas-backdrop');
             if (backdrop) backdrop.remove();
-          }, { once: true }); // asegura que se ejecute solo una vez por clic
+          }, { once: true });
         }
       });
     });
   });
 </script>
+
 
 
 
