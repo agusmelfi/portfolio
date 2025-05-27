@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css?v=1.3">
+    <link rel="stylesheet" href="styles.css?v=1.4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     
-    <title>InterHaus Design</title>
+    <title>InterHaus Deign</title>
       <style>
     /*Para que baje suave hasta el ID marcado*/
     html {
@@ -189,25 +189,30 @@
         const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
-          // Cerrar el menú primero
+          // Cierra el menú primero
           offcanvas.hide();
 
-          // Esperar a que se cierre completamente
+          // Espera a que se cierre completamente
           offcanvasEl.addEventListener('hidden.bs.offcanvas', () => {
-            // Luego scrollear y actualizar hash
+            // Scroll suave
             targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // Actualiza URL sin forzar otro scroll
             history.replaceState(null, '', targetId);
-            // Eliminar manualmente el backdrop si queda pegado
+
+            // 🔧 LIMPIEZA COMPLETA para evitar bloqueo táctil
+            document.body.classList.remove('offcanvas-backdrop', 'modal-open');
+            document.body.style.overflow = ''; // reactiva scroll/touch
+
             const backdrop = document.querySelector('.offcanvas-backdrop');
             if (backdrop) backdrop.remove();
-            document.body.classList.remove('offcanvas-backdrop');
-
-          }, { once: true }); // Solo ejecutar una vez
+          }, { once: true }); // asegura que se ejecute solo una vez por clic
         }
       });
     });
   });
 </script>
+
 
 
     <script>
